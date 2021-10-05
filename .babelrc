@@ -1,0 +1,18 @@
+{
+  "presets": [ /* 预置语法解析器组件 */
+    "env", //包含了ES2015，ES2016，ES2017故此使用该库时无需在使用ES2015或ES2016或ES2017
+    "stage-0" //ES7语法转换ES5编译器
+  ],
+  "plugins": [ /* 补充语法解析器组件（预置编译无法通过情况下使用） */
+    "transform-decorators-legacy", //JavaScript @ 装饰器语法转换器
+    [
+      "transform-runtime",
+      {
+        "helpers": false,
+        "polyfill": false,
+        "regenerator": true,
+        "moduleName": "babel-runtime"
+      }
+    ]
+  ]
+}
