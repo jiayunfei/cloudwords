@@ -1,12 +1,12 @@
-import { proxyData } from './proxyData'
 import WordMove from './wordMove'
 import DomTouch from './domTouch'
+import getDefaultColors from './defaultColors'
 
 export default class CloudWords {
   constructor(options = {}) {
     this.$el = this.getElement(options.el)
-    this.$words = options.words
-    this.$colors = options.colors
+    this.$words = options.words || []
+    this.$colors = options.colors || getDefaultColors()
     // 是否设置触摸停止
     this.$touchStop = options.touchStop || true
     this.minSize = parseInt(options.minSize || 14)
@@ -71,15 +71,18 @@ export default class CloudWords {
     this.elems.push(elem)
     if (!isInit) {
       this.setElemMove(elem)
+      this.$words.push(word)
     }
   }
   removeWord (index) {
     let elem = this.elems[index]
     this.container.removeChild(elem.el)
     this.elems.splice(index, 1)
+    this.$words.splice(index, 1)
     elem = null
   }
   updateWord (index, word) {
+    this.$words[index] = word
     const elem = this.elems[index]
     elem.dom.textContent = word
   }

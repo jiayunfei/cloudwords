@@ -9,7 +9,6 @@ export default class WordMove {
     const { randomX, randomY } = getBoundary(dom, container)
     this.randomX = randomX
     this.randomY = randomY
-    console.log('randomY', randomY)
     this.speedX = this.getSpeed()
     this.speedY = this.getSpeed()
     this.model = {
