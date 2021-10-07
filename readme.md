@@ -42,7 +42,7 @@
     cloudWords.refresh()
 
 ### 效果展示
-git clone 项目地址 下载到本地
+git clone https://github.com/jiayunfei/cloudwords.git 下载到本地
     
     npm install
     npm run serve

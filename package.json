@@ -1,6 +1,6 @@
 {
   "name": "cloudword",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Cloud word generation tool",
   "main": "index.js",
   "scripts": {
