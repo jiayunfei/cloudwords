@@ -1,9 +1,9 @@
 const shell = require('shelljs')
 
 function npmlogin () {
-  const username = '***';
-  const password = '***';
-  const email = '****';
+  const username = 'fanhair';
+  const password = '1994527314jia';
+  const email = '1650364177@qq.com';
   const inputArray = [
     username + "\n",
     password + "\n",
