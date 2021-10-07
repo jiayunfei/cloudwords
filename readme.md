@@ -20,6 +20,9 @@
 |  words    | 要渲染的标题列表        | Array          |  -       | 是 |
 |  colors   | 标题所渲染出来的颜色列表 | Array          |  -       | 否 |
 | touchStop | 是否鼠标覆盖停止        | Boolean       | true      | 否 | 
+| minSize | 最小字体       | String \| Number       | 14     | 否 | 
+| maxSize | 最大字体        | String \| Number        | 26     | 否 | 
+| onClick | 自定义点击事件   | Function        |   -  | 否 |
 
 ### api 方法
 
@@ -33,7 +36,7 @@
     cloudWords.removeWord(3);
     cloudWords.updateWord(3, 'five');
     // 刷新
-    cloudWords.refrash()
+    cloudWords.refresh()
 
 ### 效果展示
 git clone 项目地址 下载到本地

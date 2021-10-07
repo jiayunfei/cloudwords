@@ -1,5 +1,5 @@
 import WordMove from './wordMove'
-import DomTouch from './domTouch'
+import EventHandler from './eventHandler'
 import getDefaultColors from './defaultColors'
 
 export default class CloudWords {
@@ -11,6 +11,9 @@ export default class CloudWords {
     this.$touchStop = options.touchStop || true
     this.minSize = parseInt(options.minSize || 14)
     this.maxSize = parseInt(options.maxSize || 26)
+    if (typeof options.onClick === 'function') {
+      this.onClick = options.onClick
+    }
     this.elems = []
     this.container = null
     this.createWordDoms()
@@ -37,7 +40,7 @@ export default class CloudWords {
     const dom = elem.el
     elem.move = new WordMove(dom, this.$el)
     if (this.$touchStop) {
-      elem.touch = new DomTouch(elem)
+      elem.events = new EventHandler(elem, this)
     }
   }
   getCssText () {
@@ -65,7 +68,8 @@ export default class CloudWords {
     dom.textContent = word
     dom.style.cssText = this.getCssText()
     const elem = {
-      el: dom
+      el: dom,
+      word: word
     }
     this.container.appendChild(dom)
     this.elems.push(elem)
@@ -85,5 +89,6 @@ export default class CloudWords {
     this.$words[index] = word
     const elem = this.elems[index]
     elem.dom.textContent = word
+    elem.word = word
   }
 }

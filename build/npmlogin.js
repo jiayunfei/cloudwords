@@ -13,7 +13,6 @@ function npmlogin () {
   const child = shell.exec('npm login', { async: true })
 
   child.stdout.on('data', (chunk) => {
-    // shell.echo(byteToString(chunk));
     const cmd = inputArray.shift();
     if (cmd) {
       shell.echo("input " + cmd);
