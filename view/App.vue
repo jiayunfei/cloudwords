@@ -43,7 +43,8 @@ export default {
 #cloudWords {
   width: 300px;
   height: 300px;
-  background: #000;
+  background: url(./images/cloudWordBg.jpg);
+  background-size: cover;
   border: 1px solid #f5f5f5;
 }
 </style>
