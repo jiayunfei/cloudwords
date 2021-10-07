@@ -10,13 +10,16 @@
     new cloudWord({
       el: '#cloudWord',
       words: ['one', 'two', 'three'],
-      colors: ['red', 'yellow', 'green']
+      colors: ['red', 'yellow', 'green'],
+      onClick(elem) {
+        console.log('点击的文字信息：', elem)
+      }
     })
 ### 配置项
 
 |  名称 |      描述              |   类型          |   默认值   | 是否必填 |
 |  ----     | ----                  |  ----           | ----  |----  |
-|  el       |    dom 容器            | String,Document|  -        | 是 |
+|  el       |    dom 容器            | String\|Document|  -        | 是 |
 |  words    | 要渲染的标题列表        | Array          |  -       | 是 |
 |  colors   | 标题所渲染出来的颜色列表 | Array          |  -       | 否 |
 | touchStop | 是否鼠标覆盖停止        | Boolean       | true      | 否 | 
